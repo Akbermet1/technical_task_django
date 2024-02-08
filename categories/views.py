@@ -9,6 +9,9 @@ from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
 
 class CategoryListCreateView(APIView):
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticatedOrReadOnly]
+
     def get(self, request):
         all_categories = Category.objects.all()
         serializer = CategorySerializer(all_categories, many=True)
