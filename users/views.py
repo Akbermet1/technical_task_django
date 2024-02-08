@@ -17,4 +17,4 @@ def register_user_view(request):
 
 
 def success_login(request):
-    return HttpResponse("Succesful registration and authentication", content_type="text/plain")
+    return HttpResponse("You've been successfully registered", content_type="text/plain")
