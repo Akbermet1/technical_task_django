@@ -4,6 +4,8 @@ from rest_framework.response import Response
 from rest_framework import status
 from categories.models import Category
 from categories.serializers import CategorySerializer
+from rest_framework.authentication import TokenAuthentication
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
 
 class CategoryListCreateView(APIView):
@@ -21,6 +23,9 @@ class CategoryListCreateView(APIView):
     
 
 class CategoryDetailView(APIView):
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticatedOrReadOnly]
+
     def get_object(self, pk):
         try:
             return Category.objects.get(pk=pk)
