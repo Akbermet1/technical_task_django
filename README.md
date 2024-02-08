@@ -1,6 +1,12 @@
-## Project setup (non-obvious steps)
+## Running the application
 1) rename the .env_example file to .env
 2) generate a secret key and save the value in the .env file
+3) create a virtual environment: python3 -m venv venv
+4) activate the virtual environment: source venv/bin/activate
+5) install the dependencies: pip install -r requirements.txt 
+6) apply the migrations: python manage.py migrate
+7) run the server: python manage.py runserver
+
 
 ## To generate a token and test authenticated operations of views
 http://localhost/user/api-token-auth/ 
