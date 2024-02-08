@@ -16,3 +16,10 @@ when valid username and password fields are POSTed using form data or JSON, you 
 For clients to authenticate, the token key should be included in the Authorization HTTP header. The key should be prefixed by the string literal "Token", with whitespace separating the two strings. For example:
 
 Authorization: Token 9944b09199c62bcf9418ad846dd0e4bbdfc6ee4b
+
+
+## Dockerization
+To run the application in docker execute the followng command: docker-compose up --build
+
+You should be able to access the endpoints from your localhost
+http://localhost:8000/
